@@ -1,6 +1,7 @@
 # Trabalho-Assembly---IAS
 Trabalho de resolução de questões em Assembly, utilizando o Conjunto de Instruções do IAS.
 Lista de Exercícios com questões que devem atender as seguintes prescrições:
+
 1-Faça um programa que recebe dois valores inteiros nos endereços de memória 0x100 e
 0x101 e armazena a soma deles no endereço 0x110 e a subtração no endereço 111.
 2-Escreva um programa que calcula a seguinte expressão: A = (A + B) - (C + D). Em
