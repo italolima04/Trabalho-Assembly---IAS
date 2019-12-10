@@ -1,0 +1,22 @@
+.org 0x100
+    var_base:
+        .word 04
+    var_altura:
+        .word 03 
+            
+.org 0x110
+    auxiliar:
+        .word 02
+    area:
+        .word 00 
+
+.org 0x000
+    LOAD MQ, M(var_base)
+    MUL M(var_altura)
+    LOAD MQ
+    STOR M(area)
+    LOAD M(area)
+    DIV M(auxiliar)
+    LOAD MQ
+    STOR M(area)
+    
