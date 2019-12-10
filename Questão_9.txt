@@ -1,0 +1,37 @@
+.org 0x100
+    var_raio:
+        .word 04
+    var_area:
+        .word 00 
+    var_perimetro:
+        .word 00 
+        
+.org 0x110
+    pi:
+        .word 3.14 
+    auxiliar:
+        .word 02 
+    raio_quadrado:
+        .word 00
+    pi_raio:
+        .word 00 
+        
+.org 0x000 
+    LOAD MQ, M(var_raio)
+    MUL M(var_raio)
+    LOAD MQ
+    STOR M(raio_quadrado)
+    LOAD MQ, M(raio_quadrado)
+    MUL M(pi)
+    LOAD MQ
+    STOR M(var_area)
+    LOAD MQ, M(var_raio)
+    MUL M(pi)
+    LOAD MQ
+    STOR M(pi_raio)
+    LOAD MQ, M(pi_raio)
+    MUL M(auxiliar)
+    LOAD MQ
+    STOR M(var_perimetro)
+    
+    
