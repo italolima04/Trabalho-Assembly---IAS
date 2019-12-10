@@ -1,0 +1,25 @@
+.org 0x100
+
+    var_n:
+        .word 03
+    var_fat:
+        .word 01 
+    var_i:
+        .word 01
+    var_contador:
+        .word 01
+    
+.org 0x000
+    comeco:
+    LOAD MQ, M(var_fat)
+    MUL M(var_i)
+    LOAD MQ
+    STOR M(var_fat)
+    LOAD M(var_i)
+    ADD M(var_contador)
+    STOR M(var_i)
+    LOAD M(var_n)
+    SUB M(var_i)
+    JUMP+ M(comeco) 
+    
+    
