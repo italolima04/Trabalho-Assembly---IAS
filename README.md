@@ -31,11 +31,6 @@ de memória 0x101 e 0x102 sua área e seu perı́metro, respectivamente.
 memória 102 um se eles forem coprimos e zero caso contrário. Dois números a e b são
 coprimos se não há um divisor d > 1 que seja comum a ambos.
 
-11-Escreva uma procedimento que recebe um vetor de inteiros, no endereço de memória
-0x102, e seu tamanho, no endereço de memória 0x100, e um valor inteiro n no endereço
-de memória 0x101. Faça um programa que atualiza cada elemento do vetor pela soma
-do elemento com n.
-
 12-Escreva um procedimento para calcular o fatorial de um número n. 
 
 13-Faça um programa que lê dois números inteiros positivos a e b e calcula a ∗ b usando
