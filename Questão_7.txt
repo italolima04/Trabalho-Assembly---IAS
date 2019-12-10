@@ -1,0 +1,24 @@
+.org 0x100
+    var_salario:
+        .word 50
+    var__percen_aumento:
+        .word 10
+    var_aumento:
+        .word 00
+    var_salario_pos:
+        .word 00 
+    var_value_aumento:
+        .word 100
+
+.org 0x000
+    LOAD MQ, M(var_salario)
+    MUL M(var__percen_aumento)
+    LOAD MQ
+    STOR M(var_aumento)
+    LOAD M(var_aumento)
+    DIV M(var_value_aumento)
+    LOAD MQ
+    STOR M(var_aumento)
+    LOAD M(var_salario)
+    ADD M(var_aumento)
+    STOR M(var_salario_pos)
