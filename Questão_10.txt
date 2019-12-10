@@ -1,0 +1,30 @@
+.org 0x100
+    var_1:
+        .word 15 
+    var_2:
+        .word 08
+    var_resultado:
+        .word 00 
+
+.org 0x110
+    resto:
+        .word 00 
+    resto_auxiliar:
+        .word 02 
+
+.org 0x000
+    processo:
+    LOAD M(var_1)
+    DIV M(var_2)
+    STOR M(resto)
+    LOAD M(var_2)
+    STOR M(var_1)
+    LOAD M(resto)
+    STOR M(var_2)
+    LOAD M(resto)
+    SUB M(resto_auxiliar)
+    JUMP+ M(processo)
+    LOAD M(resto)
+    STOR M(var_resultado)
+
+    
