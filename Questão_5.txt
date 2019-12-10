@@ -1,0 +1,67 @@
+.org 0x100
+    var_media_ponderada:
+        .word 00 
+    var_nota_1:
+        .word 06
+    var_nota_2:
+        .word 06:
+    var_nota_3:
+        .word 06
+    var_peso_1:
+        .word 02
+    var_peso_2:
+        .word 02:
+    var_peso_3:
+        .word 02
+        
+.org 0x110
+    resul_mul_1:
+        .word 00 
+     resul_mul_2:
+        .word 00 
+     resul_mul_3:
+        .word 00 
+    soma_mul:
+        .word 00
+    soma_pesos:
+        .word 00 
+        
+.org 0x000
+    LOAD MQ, M(var_nota_1)
+    MUL M(var_peso_1)
+    LOAD MQ
+    STOR M(resul_mul_1)
+    LOAD MQ, M(var_nota_2)
+    MUL M(var_peso_2)
+    LOAD MQ
+    STOR M(resul_mul_2)
+    LOAD MQ, M(var_nota_3)
+    MUL M(var_peso_3)
+    LOAD MQ
+    STOR M(resul_mul_3)
+    LOAD M(soma_mul)
+    ADD M(resul_mul_1)
+    STOR M(soma_mul)
+    LOAD M(soma_mul)
+    ADD M(resul_mul_2)
+    STOR M(soma_mul)
+    LOAD M(soma_mul)
+    ADD M(resul_mul_3)
+    STOR M(soma_mul)
+    LOAD M(var_peso_1)
+    ADD M(var_peso_2)
+    STOR M(soma_pesos)
+    LOAD M(soma_pesos)
+    ADD M(var_peso_3)
+    STOR M(soma_pesos)
+    LOAD M(soma_mul)
+    DIV M(soma_pesos)
+    LOAD MQ
+    STOR M(var_media_ponderada)
+    
+    
+    
+    
+    
+    
+    
