@@ -1,0 +1,33 @@
+.org 0x100
+    var_a:
+        .word 02
+    var_b:
+        .word 04
+    var_c:
+        .word 02:
+    var_d:
+        .word 01 
+        
+.org 0x110
+    resul_soma_1:
+        .word 00 
+    resul_soma_2:
+        .word 00
+    resul_div:
+        .word 00 
+        
+.org 0x000
+    LOAD M(var_a)
+    ADD M(var_b)
+    STOR M(resul_soma_1)
+    LOAD M(var_c)
+    ADD M(var_d)
+    STOR M(resul_soma_2)
+    LOAD M(resul_soma_1)
+    DIV M(resul_soma_2)
+    LOAD MQ
+    STOR M(resul_div)
+    
+    
+    
+    
